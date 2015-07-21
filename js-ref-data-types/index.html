@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js-ref-data-types</title>
+	<script>
+		var animals = ["Dog","Cat","Bird","Horse"];
+		console.log("Fly like a "+animals[2]);
+		var student = {};
+		student.firstName = "Jason";
+		student.lastName = "Ekstrom";
+		student.age = "28";
+		student.school = "Learning Fuze";
+		student.classList = ["Math", "Science","Woodworking","Welding"];
+		student.greeting = function(){return "Hello, my name is "+student.firstName};
+		student.aboutMe = function(){return "My full name is "+student.firstName+" "+student.lastName+", I am  "+student.age+" years old and I am a student at "+student.school+"."};
+		student.myClasses = function(){return "I am taking the following classes: "+student.classList};
+
+		console.log("Greeting function says:",student.greeting());
+		console.log("aboutMe function says:",student.aboutMe());
+		console.log("myClasses function says:",student.myClasses());
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
