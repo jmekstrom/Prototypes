@@ -5,23 +5,34 @@
 	<title>js-for-loops</title>
 	<script>
 
+	// JS For Loops
+	// Prototype
+	// Build an array and loop through it
+	// 1
 	var myArray = ["coffee","beer","music","weightlifting","books"];
 
+	// 2
 	for(var i=0; i < myArray.length; i++){
 		console.log(myArray[i]);
-		console.log(i);
+		console.log("i is equal to:",i);
 	}
 
+
+	//More array looping fun!
+	// 1
 	var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+	// 2
 	for(var i = 0; i < numbers.length; i++){
 		console.log(numbers[i]);
 	}
 
+	// 4
 	for(var i = 0; i < numbers.length; i++){
 		console.log(numbers[numbers.length-1-i]);
 	}
 
+	// 6
 	for(var i = 0; i < numbers.length; i++){
 		var x = numbers[i];
 		if(x%2 != 0 ){
@@ -29,6 +40,7 @@
 		}
 	}
 
+	// 7
 	var mixedArray = [4, 56, 11, 13, 97, 22, 7, 36, 19, 5, 8, 10];
 	for(var i = 0; i < mixedArray.length; i++){
 		var x = mixedArray[i];
@@ -36,6 +48,16 @@
 		console.log(mixedArray[i]);
 		}
 	}
+
+	//For in loop
+	// 1
+	var seats = {seat1: 'Stu', seat2: 'Peggy', seat3: 'LoneStar', seat4: 'George', seat5: 'Mike'};
+	var i;
+	for(i in seats){
+		console.log(seats[i]+" is in "+i);
+	}
+
+
 
 
 
