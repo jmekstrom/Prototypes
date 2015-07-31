@@ -38,8 +38,8 @@ To get these files to your local machine you will need to do the following
 	```JavaScript
 	//One option for creating a student_object
 	var student_object = {};
-	student.name = "John Doe";
-	student.grade = 87;
+	student_object.name = "John Doe";
+	student_object.grade = 87;
 	```
 
 ### Prototype 2: Collect Student Objects
