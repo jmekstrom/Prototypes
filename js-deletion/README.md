@@ -31,6 +31,7 @@ To get these files to your local machine you will need to do the following
 	- HTML tag
 	- head tag
 	- body tag
+	
 
 3. Add `script` tags between your `head` tags
 
