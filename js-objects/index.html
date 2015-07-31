@@ -1,19 +1,145 @@
 <!DOCTYPE html>
 <html>
-    <head>
-		<title>JS Objects</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		
-		<script>
-			//Your JS here
 
-		</script>
-    </head>
-	<body>
-		<div id="student-display-area">
-			
-		</div>
-	</body>
+<head>
+    <title>JS Objects</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+    //Your JS here
+    var id = 1;
+    var student_array = [];
+    var student_object = {}
+    student_object.name = "John Doe";
+    student_object.grade = 87;
+
+    /*
+     * FUNCTION NAME: add_student
+     * PURPOSE: To get a students name and grade from the user and create
+     *          a student object from the user input that then gets stored 
+     *          in a global array
+     * PARAMETERS: None
+     * GLOBAL VARIABLES: student_array
+     */
+    function add_student() {
+        var student = {};
+        student.id = id++;
+        var first_name = prompt("First Name?");
+        student.firstname = first_name;
+        var last_name = prompt("Last Name?");
+        student.lastname = last_name;
+        var student_grade = prompt("Grade?");
+        student.grade = student_grade;
+        student_array.push(student);
+        console.log(student_array);
+        list_students();
+    }
+
+    function delete_student() {
+        var delete_index;
+        var delete_id = prompt("ID of student to delete?");
+        for (var i = 0; i < student_array.length; i++) {
+            if (student_array[i].id == delete_id) {
+                delete_index = i;
+            }
+        }
+        if (delete_index == undefined) {
+            alert("ID does not exist!!!!!!!!!!");
+        } else {
+            student_array.splice(delete_index, 1);
+        }
+        list_students();
+    }
+
+    /*
+     * FUNCTION NAME: list_students
+     * PURPOSE: Display all students info from the global student_array in a Bootstrap grid layout
+     * PARAMETERS: None
+     * GLOBAL VARIABLES: student_array
+     */
+    function list_students() {
+        $('.student_line').empty();
+        for (var i = 0; i < student_array.length; i++) {
+            $('#num').append("<p>" + (i + 1) + ")</p>");
+            $('#last').append("<p>" + student_array[i].lastname + "</p>");
+            $('#first').append("<p>" + student_array[i].firstname + "</p>");
+            $('#id').append("<p>" + student_array[i].id + "</p>");
+            $('#grade').append("<p>" + student_array[i].grade + "%</p>");
+        }
+    }
+
+    $(document).ready(function() {
+        $("#add_student").click(function() {
+            add_student();
+        })
+        $("#refresh").click(function() {
+            list_students();
+        })
+        $("#delete").click(function() {
+            delete_student();
+        })
+
+    })
+    </script>
+    <style>
+    .header {
+        height: 100%;
+        min-height: 125px;
+        background-color: gray;
+        margin: 0px 0px 50px 0px;
+        padding-top: 10px;
+    }
+    
+    h1 {
+        color: white;
+        margin-top: 0;
+        margin-left: 10px;
+    }
+    
+    div {
+        height: 100%;
+    }
+    
+    .title {
+        background-color: lightgray;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .student_line {
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class='col-sm-12 header'>
+        <h1>Student Roster</h1>
+        <button type="button" class="btn btn-success" style="margin:10px" id="add_student">Add Student</button>
+        <button type="button" class="btn btn-primary" style="margin:10px" id="refresh">Refresh Student Data</button>
+        <button type="button" class="btn btn-danger" style="margin:10px" id="delete">Delete Student</button>
+    </div>
+    <div id="student-display-area">
+        <div class="row">
+            <div class='col-xs-1 title' style="text-align:center">#</div>
+            <div class='col-xs-3 title'>Last Name</div>
+            <div class='col-xs-3 title'>First Name</div>
+            <div class='col-xs-3 title'>Student ID</div>
+            <div class='col-xs-2 title'>Grade</div>
+        </div>
+        <div class="row">
+            <div class="display_area">
+                <div class='col-xs-1 student_line' id="num" style="text-align:center"></div>
+                <div class='col-xs-3 student_line' id="last"></div>
+                <div class='col-xs-3 student_line' id="first"></div>
+                <div class='col-xs-3 student_line' id="id"></div>
+                <div class='col-xs-2 student_line' id="grade"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
