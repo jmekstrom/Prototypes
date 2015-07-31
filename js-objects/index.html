@@ -61,7 +61,16 @@
     function list_students() {
         $('.student_line').empty();
         for (var i = 0; i < student_array.length; i++) {
+        	//row
             $('#num').append("<p>" + (i + 1) + ")</p>");
+            //VERSION 2: var student_index = $("<p>").text(i+1);
+            /*VERSION 3: var student_index = $("<p>",{
+            	text: i+1,
+            	class: 'student_line col-xs-3'
+            }).click(function(){
+            	console.log('index was clicked');
+            });*/
+            student_row.append(student_index);
             $('#last').append("<p>" + student_array[i].lastname + "</p>");
             $('#first').append("<p>" + student_array[i].firstname + "</p>");
             $('#id').append("<p>" + student_array[i].id + "</p>");
