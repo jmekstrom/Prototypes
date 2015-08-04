@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>JS Deletion</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        var student_array = [
+            {name: 'John', class: 'Physics'},
+            {name: 'Jane', class: 'Math'},
+            {name: 'Jon', class: 'English'},
+            {name: 'Nancy', class: 'Physics'},
+            {name: 'Owen', class: 'Comedy'},
+            {name: 'Morgan', class: 'Music'},
+            {name: 'Jessica', class: 'Nursing'},
+            {name: 'Emily', class: 'Art'},
+            {name: 'Emma', class: 'Photography'},
+            {name: 'Jason', class: 'CSS'}
+        ];
+        var student_container = $("<div>", {
+            id: "student_container"
+        })
+
+        $(document).ready(function () {
+            $("body").append(student_container);
+            console.log(student_array);
+            for (var i = 0; i < student_array.length; i++) {
+                console.log("Hello", student_array);
+                var student_row = $("<div>", {
+                    class: "student_row"
+                });
+                $("#student_container").append(student_row);
+            }
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
