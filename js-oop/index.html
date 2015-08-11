@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>js-oop</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+
+        //Prototype 1
+        var student_object = function(firstName,lastName,age,grade){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.grade = grade;
+            this.fullName = function(){
+                return this.firstName+" "+this.lastName;
+            }
+
+        };
+
+        student_object.fullName = function(){
+            return this.firstName +" "+this.LastName;
+        };
+
+        student_object.removeSelf = function(){
+            delete this;
+        };
+
+        var student_array = [];
+        var student_object1 = new student_object("Jason","Ekstrom",28,100);
+        student_array.push(student_object1);
+        var student_object2 = new student_object("Daniel","Paschal" ,35,101);
+        student_array.push(student_object2);
+        var student_object3 = new student_object("Scott", "Bowler", 28, 102);
+        student_array.push(student_object3);
+
+        for(var i = 0; i < student_array.length; i++){
+           console.log(student_array[i].fullName());
+        }
+
+        //Prototype 2
+        var course_object = function(students_array,teacher,course_name){
+            this.students_array = students_array;
+            this.teacher = teacher;
+            this.course_name = course_name;
+            this.set_teacher = function(teacher){
+                this.teacher = teacher;
+            };
+            this.set_course_name = function(course_name){
+                this.course_name = course_name;
+            };
+            this.course_info = function(){
+                return "Course: "+this.course_name+"\nTeacher: "+this.teacher+"\nNumber of Students: "+this.student_array.length;
+            };
+            this.add_student = function(student){
+                this.students_array.push(studentobj);
+                return student_array.length;
+            };
+            this.find_student_by_name = function(fname,lname){
+                //find student by name in the students_array
+                for(var i = 0; i < students_array.length; i++){
+                    if(students_array[i].firstName == fname && students_array[i].lastName == lname){
+                        index = i;
+                        return students_array[i];
+                    }
+                }
+                return {index:-1};
+            };
+            this.remove_student = function(student){
+                var objIndex = this.find_student_by_name(student.firstName,student.lastName).index;
+                if(objIndex>=0){
+                    var enrolled = true;
+                    students_array.splice(student.index,1);
+                    var message = "student removed from class"
+                }
+                else{
+                    var enrolled = false;
+                    var message = "That student is not enrolled in this class";
+                }
+                return {enrolled:enrolled,message:message};
+            };
+            this.dismiss_all_students = function(){
+                students_array = [];
+                if(students_array.length <= 0){
+                   return true;
+                }
+                else{
+                    return false;
+                }
+            };
+            this.list_all_students = function(){
+                return students_array;
+            }
+        };
+
+        //Prototype 3
+        var students_array = [];
+        var geometry = new course_object(students_array,"Professor Collins","Geometry");
+        for(var i = 0; i < 3; i++){
+            var fname = prompt("New Geometry Student\nFirst Name:");
+            var lname = prompt("New Geometry Student\nLast Name:")
+            var studentobj = {firstName:fname,lastName:lname,index:i}
+            geometry.add_student(studentobj);
+        }
+        console.log("Geometry Course Object",geometry);
+
+        students_array = [];
+        var algebra = new course_object(students_array,"Professor Kimura","Algebra")
+        for(var i = 0; i < 2; i++){
+            var fname = prompt("New Algebra Student\nFirst Name:");
+            var lname = prompt("New Algebra Student\nLast Name:")
+            var studentobj = {firstName:fname,lastName:lname,index:i}
+            algebra.add_student(studentobj);
+        }
+        console.log("Algebra Course Object",algebra);
+        console.log("Student Found and this is what it returns:",geometry.find_student_by_name("Jason","Ekstrom"));
+        console.log("Student not found:",algebra.find_student_by_name("asdf","tegekjnc"));
+        console.log(geometry.list_all_students());
+        console.log(geometry.dismiss_all_students());
+        geometry.add_student(algebra.find_student_by_name("Jason","Ekstrom"));
+        console.log(algebra.remove_student("Jason","Ekstrom"));
+        console.log("Geometry",geometry);
+        console.log("Algebra",algebra);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
