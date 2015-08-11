@@ -5,11 +5,13 @@
 To get these files to your local machine you will need to do the following
 
 1. Open your console to the proper directory
-2. pull from the original Learningfuze repo
+2. Type the following command:
+	- `git checkout master` - This will switch you to your master branch
+3. pull from the original Learningfuze repo
 	- Use the following command:
 		`git pull https://github.com/Learning-Fuze/prototypes.git master`
 	- This will pull all the files from the original LearningFuze repo that you forked from, then merge the files with your existing files on your local machine.
-3. Still in your console type the following: 
+4. Still in your console type the following: 
 	- `git checkout -b js-dom-events` press enter
 	- This will create a new branch for this prototype
 
@@ -105,9 +107,6 @@ Notice the differences between where and how `onclick` works verses how `onload`
 <a href="http://javascript.info/tutorial/bubbling-and-capturing" target="_blank">Click Here</a> For some advanced information on event bubbling and capturing
 
 ## After you have completed all the above
-
-### NOTE: 
-#### The pull request is slightly different this time READ ALL the steps
 
 1. add, commit, and push your updated files to your js-dom-events branch on gitHub
 	- `git add . ` - To add the files

@@ -38,7 +38,7 @@ To get these files to your local machine you will need to do the following
 
 ## JS Functions
 
-### Prototype
+### Prototype-1 (No Return)
 
 #### Build your first function
 
@@ -85,9 +85,11 @@ Click your `ADD` button. What do you see in the console?
 1. Between your `script` tags declare a function called `greeting` that takes two parameters
 	- Parameter 1 will be a `string` to hold a name
 	- Parameter 2 will be a `number` to hold an age
-2. In your function use a `console.log()` to create the following message:
+2. Inside your function declare a variable named `output`
+	- set `ouput` equal to the following string using your parameters and concatination
 	- `"Hello, [name] you are [number] years old"`
 	- The `[]` are just place holders for where you will insert your parameters
+3. Still inside your function add a `console.log` to log out your `output` variable
 
 #### Using your message function
 
@@ -99,6 +101,48 @@ Click your `ADD` button. What do you see in the console?
 Save your work and refresh your page in the browser
 
 Click your `Greeting` button. What do you see in the console?
+
+### Prototype-2 (Time To Return)
+
+#### Add 2.0
+
+1. Between your `script` tags declare a function called `add2` that takes in two `number` parameters
+2. Have the function **return** the result of adding the two parameters together
+	- *HINT*
+	```JavaScript
+	function add2(x, y){
+		var total = x + y;
+
+		return total;
+	}
+	```
+3. Declare a variable (outside of your function) called `add2result`:
+	- set `add2result` to the result of calling your `add2` function
+	- *HINT*
+	```JavaScript
+	var add2result = add2(10, 36);
+	```
+4. Create a `button` between your `body` tags, have it say `ADD #2`
+	- give your button an `onclick` attribute
+	- set `onclick` equal to: `console.log(add2result)`
+	- *HINT* - `onclick="console.log(add2result)"`
+
+Because `add2` `returns` a number you can set it to a variable or even use it in another function call. Your original `add` function doesn't `return` anything so you can't set the result to a variable.
+
+#### function Inception
+
+Here is an example of functions being used as parameters in another function call. This only works because the `add2` function `returns` a number
+
+```JavaScript
+
+var result = add2(add2(5, 10), add2(20, 30));
+```
+
+In the example above the inner functions will be called first then there results will be passed into the outside function producing a final result.
+- first 5 will be added to 10 equaling 15
+- second 20 will be added to 30 equaling 50
+- third and finally 15 and 50 will be added together equaling 65 which will then be stored in the variable `result`
+Don't worry if this is confusing now, it's just an example to get you thinking
 
 ## After you have completed all the above
 
