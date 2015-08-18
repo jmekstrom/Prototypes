@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <title>Form</title>
+    <script>
+        function call(){
+            var check_value = $("#check").val();
+            var text = $("#comment").val();
+            var obj = {check_value:check_value,text:text};
+            $.ajax({
+                url:"index.php",
+                method:"GET",
+                data: obj,
+                dataType:"text",
+                success: function(data){
+                    console.log(data);
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<form role="form">
+
+    <div class="checkbox">
+        <label><input type="checkbox" value="howdy" id="check">Howdy</label>
+    </div>
+    <div class="form-group">
+        <label for="comment">Text Area:</label>
+        <textarea class="form-control" rows="5" id="comment"></textarea>
+    </div>
+    <div class="form-group">
+        <button type="button" onclick="call()">Submit</button>
+    </div>
+</form>
+</body>
+</html>
