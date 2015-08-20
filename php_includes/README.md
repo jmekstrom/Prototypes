@@ -8,7 +8,7 @@
     include('includes/data.php');
     $result = $a * $b;
     print("<br>Result is $result");
-  </?>
+  ?>
   ```
 - Create a folder called includes
 - In the includes folder, create a file called 'data.php'
