@@ -54,28 +54,40 @@ var image_object = {};
 		
 
 function prev_image(){
+	//conditional statement preps the image to be animated
 	if(image_object.displayIndex === 0){
-		image_object.displayIndex = image_object.imageDOM.length-1;
-		image_object.imageDOM[image_object.displayIndex].css('left','-100%');
-		image_object.imageDOM[image_object.displayIndex].animate({'left':'0%'});
-		console.log('last image');
+		var prev_image = image_object.imageDOM.length-1;
 	}
 	else{
-		image_object.imageDOM[image_object.displayIndex].animate({'left':'100%'});
-		image_object.displayIndex = image_object.displayIndex -1;
-		image_object.imageDOM[image_object.displayIndex].animate({'left':'0%'});
+		var prev_image = image_object.displayIndex-1;
 	}
+	//image placed in proper location to be animated
+	image_object.imageDOM[prev_image].css("left","-100%");
+	//current image animated to the right
+	image_object.imageDOM[image_object.displayIndex].animate({'left':'100%'});
+	//new image animated to the right
+	image_object.imageDOM[prev_image].animate({'left':'0%'});
+	//current display index updated
+	image_object.displayIndex = prev_image;
+	
 }
 
 function next_image(){
+	//conditional statement preps the image to be animated
 	if(image_object.displayIndex === image_object.imageDOM.length-1){
-		image_object.displayIndex = 0;
+		var next_image = 0;
 	}
 	else{
-		image_object.imageDOM[image_object.displayIndex].animate({'left':'-100%'});
+		var next_image = image_object.displayIndex+1;
 	}
-	image_object.displayIndex = image_object.displayIndex +1;
-	image_object.imageDOM[image_object.displayIndex].animate({'left':'0%'});
+	//image placed in proper location to be animated
+	image_object.imageDOM[next_image].css("left","100%");
+	//current image animated to the right
+	image_object.imageDOM[image_object.displayIndex].animate({'left':'-100%'});
+	//new image animated to the right
+	image_object.imageDOM[next_image].animate({'left':'0%'});
+	//current display index updated
+	image_object.displayIndex = next_image;
 }
 </script>
 
