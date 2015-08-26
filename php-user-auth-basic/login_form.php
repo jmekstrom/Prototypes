@@ -6,7 +6,7 @@ function ajaxCall(){
 	var password = $('#password').val();
 	$.ajax({
 		url: "login_handler.php",
-		data: username,
+		data: {username,password},
 		cache: false,
 		method: "POST",
 		dataType: "text",
@@ -17,6 +17,7 @@ function ajaxCall(){
 }
 </script>
 
+
 Username:<input type="text" id="username"><br><br>
 Password :<input type="text" id="password"><br><br>
-<button type="submit" onclick="ajaxCall()">Login</button>
+<button type="button" onclick="ajaxCall()">Login</button>
