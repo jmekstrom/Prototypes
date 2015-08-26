@@ -9,9 +9,14 @@ function ajaxCall(){
 		data: {username,password},
 		cache: false,
 		method: "POST",
-		dataType: "text",
+		dataType: "json",
 		success: function(data){
-			console.log(data);
+			if(data.success){
+				console.log("login successful",data);
+			}
+			else{
+				console.log("login failed",data);
+			}
 		}
 	})
 }
