@@ -22,10 +22,9 @@ To get these files to your local machine you will need to do the following
 
 ### Getting Started
 
-1. The following files have been included for you inside the `php-file-upload` folder
-	- file_handler.php
-	- uploader_ajax.php
-	- uploader_form.php
+1. The following files have been included for you inside the `php-directory-operations` folder
+	- dir_listings.php
+	- index.php
 
 2. **DO NOT** edit this README file
 
@@ -110,6 +109,8 @@ To get these files to your local machine you will need to do the following
 	- In the image below make sure the numbered arrows match **YOUR** info
 		- 1. Should be your branch name - Look down the list to find your branch
 		- 2. Should be your Repo name - Look down the list to find your Repo
-		- 3. Should be your php-file-upload branch
+		- 3. Should be your php-directory-operations branch
 	- If you are unsure on any of this or are unable to find your branch or repo, ask for help, don't just guess
 	- This is important if you want feedback and credit for the prototypes 
+
+<img src="https://github.com/Learning-Fuze/prototypes/blob/assets/assets/pr_php-directory-operations.png?raw=true" alt="">
