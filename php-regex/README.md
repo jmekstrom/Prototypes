@@ -62,7 +62,7 @@ To get these files to your local machine you will need to do the following
 			//note that I didn't use quotes on the array key when used inside double quotes
 			break;
 		```
-	- inside your case statements, use preg_match to determine if the value matches an appropriate RegEx
+	- inside your case statements, use `preg_match()` to determine if the value matches an appropriate RegEx
 		- for example:
 		```PHP
 		if(preg_match( '/^[a-zA-Z0-9{2,}$/' , $_POST['first_name']) != 1)
@@ -84,7 +84,7 @@ To get these files to your local machine you will need to do the following
 			- must have at least 6 characters total
 			- only characters and numbers (no special characters)
 		- bonus (extra challenge!):
-			- find if it has 3 consecutive numbers anywhere within the contents
+			- find if the value from the textarea has 3 consecutive numbers anywhere within its contents
 
 ## After you have completed all the above
 

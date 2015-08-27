@@ -37,23 +37,32 @@ div {
 	background-color: pink;
 }
 
-.card-back {
-	background-image: url("images/card_design.png");
+.card-back,
+.flag,
+.path {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: contain;
+}
+
+
+.card-back {
+	background-image: url("images/card_design.png");
 }
 
 .flag {
 	background-image: url("images/british_flag.jpg");
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: contain;
 }
 
 .path {
 	background-image: url("images/optional_path.jpg");
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: contain;
 }
+
+/*.no-select {*/
+	/*-webkit-touch-callout: none;*/
+	/*-webkit-user-select: none;*/
+	/*-khtml-user-select: none;*/
+	/*-moz-user-select: none;*/
+	/*-ms-user-select: none;*/
+	/*user-select: none;*/
+/*}*/
