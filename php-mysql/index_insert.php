@@ -1,6 +1,12 @@
 <?php
+    print_r($_POST);
     require("mysql_connect.php");
-    $query = "INSERT INTO todo_items(id, title, details, timestamp, user_id) VALUES ('11','adding an item','no details','1440800561','1')";
+    $select = "SELECT * FROM todo_items WHERE user_id = '1'";
+    $results = mysqli_query($conn, $select);
+    $id = mysqli_num_rows($results);
+    $id = $id + 1;
+    print_r("<br> Current id is: $id<br>");
+    $query = "INSERT INTO todo_items(id, title, details, timestamp,priority, user_id) VALUES ('$id','$_POST[title]','$_POST[details]','$_POST[timestamp]',$_POST[priority],'1')";
     mysqli_query($conn,$query);
     if(mysqli_affected_rows($conn) > 0 ){
         print_r(mysqli_affected_rows($conn)." row affected");
