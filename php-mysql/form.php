@@ -27,4 +27,7 @@
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
+    <form action="logout.php" method="post">
+        <button type="submit" class="btn btn-default">Logout</button>
+    </form>
 </div>
